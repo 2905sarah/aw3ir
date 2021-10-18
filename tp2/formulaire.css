@@ -43,9 +43,9 @@ label{
 form {
   width:100%;
   padding: 30px;
-  border: 1px solid #0c0b0b;
+  border: 1px solid #2b2828;
   background: rgb(245, 229, 214);
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  box-shadow: 0 0 20px 0 rgba(82, 80, 80, 0.2), 0 5px 5px 0 rgba(85, 83, 83, 0.24);
 }
 #container h1{
   width: 38%;
@@ -55,7 +55,7 @@ form {
 
 
 input[type=button] {
-  background-color: #c49745;
+  background-color: #c59143;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
