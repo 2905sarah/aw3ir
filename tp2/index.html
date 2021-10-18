@@ -12,59 +12,57 @@
         <link rel="stylesheet" href="formulaire.css" />
         <script type="text/javascript" src="formulaire.js"></script>
        
-        <h1 >Saisie d'une fiche "Personne"</h1>
+        
         <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
         <!--<link rel="stylesheet" href="style.css">-->
         <!--<script src="js/main.js"></script>-->
     </head>
     <body>        
-        
-        <br/>
-        <form id="formAW" onsubmit="validation()" > 
-        <p>
-            <label for="Nom" >Nom</label> :
-            <input type="text" name="Nom" id="Nom" placeholder="Ex : aaaaaa" size="30" minlength="5" maxlength="20" class="inputAW"/>
-        </p>
-        <p>
-            <label for="Prénom">Prénom</label> :
-            <input type="text" name="Prénom" id="Prénom" placeholder="Ex : zzzzzz" size="30" minlength="5" maxlength="20" class="inputAW" />
-        </p>
-        <p>
-            <label for="Date">Date de naissance</label> :
-            <input type="date" name="Date" id="Date"  class="inputAW"/>
-        </p>
-        <p>
-            <label for="Sexe">Sexe</label> :
-            <select name="Sexe" id="Sexe">
-                <option value="Homme">Homme</option>
-                <option value="Femme">Femme</option>
-                <option value="Autre">Autre</option>
-            </select>
-        </p>
-        <p>
-            <label for="Adresse">Adresse</label> :
-            <input type="text" name="Adresse" id="Adresse" size="30" minlength="5" maxlength="50" class="inputAW" />
-        </p>
-        <p>
-            <label for="E-mail">E-mail</label> :
-            <input type="email" name="E-mail" id="E-mail" placeholder="Ex : tototata@.fr" size="30" minlength="5" maxlength="30" class="inputAW"/>
-        </p>
-        
-        <br/>
-         <!--<div class="button">
-            <button type="submit" onclick="validation()">Valider</button>
-        </div>-->
+        <h1  align="center"><font size="6">Saisie d'une fiche "Personne"</font> </h1>
+       
+        <form id="formulaire" onsubmit="validation()" > 
 
+        <table>
+        <tr>    
+        
+        <td>    <label for="Nom" >Nom</label> 
+        <td>    <input type="text" name="Nom" id="Nom" placeholder="text" size="30" minlength="5" maxlength="20" class="form-control"/> </td>
+        </tr>
+
+        <tr>
+        <td>    <label for="Prénom">Prénom</label> 
+        <td>    <input type="text" name="Prénom" id="Prénom" placeholder="text" size="30" minlength="5" maxlength="20" class="form-control" /> </td>
+        </tr>
+
+        <tr>
+        <td>    <label for="Date">Date de naissance</label> 
+        <td>    <input type="text" name="Date" id="Date" placeholder="JJ/MM/AAAA" class="form-control"/> </td>
+        </tr>
+      
+        <tr>
+        <td>    <label for="Adresse">Adresse</label> 
+        <td>    <input type="text" name="Adresse" id="Adresse" placeholder="text" size="30" minlength="5" maxlength="50" class="form-control" /> </td>
+        </tr>
+
+        <tr>
+        <td>    <label for="Email">Email</label> 
+        <td>    <input type="text" name="Email" id="Email" placeholder="exemple@mail.fr" size="30" minlength="5" maxlength="30" class="form-control"/> </td>
+        </tr>
+        
+    </table>
+      
         <input type="button" value="Valider" onclick="validation()">
         
     </form>
     <div id="error">
         
     </div>
-    <br/>
+
+
     <div id="Resultat">
 
     </div>
+
     </body>
 </html>
 
