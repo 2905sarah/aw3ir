@@ -22,7 +22,7 @@ label{
       display: none;
   } 
   
-  #Resultat{
+  #resultat{
     background-color: green;
     padding: 5px;
     border:solid black 1px;
