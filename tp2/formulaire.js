@@ -20,6 +20,6 @@ function validation(){
         document.getElementById("Resultat").classList.add("display")
       }
 
-      
+    
     
 }

@@ -1,5 +1,5 @@
 body{
-  background-color: #85af81;              
+  background-color: #e0c38e;              
   font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
   font-size: 16px;
   margin: 0 auto;
@@ -43,8 +43,8 @@ label{
 form {
   width:100%;
   padding: 30px;
-  border: 1px solid #c4d1ce;
-  background: rgb(207, 216, 206);
+  border: 1px solid #0c0b0b;
+  background: rgb(245, 229, 214);
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 #container h1{
@@ -55,7 +55,7 @@ form {
 
 
 input[type=button] {
-  background-color: #53af57;
+  background-color: #c49745;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -66,6 +66,6 @@ input[type=button] {
 
 input[type=button]:hover {
   background-color: white;
-  color: #53af57;
-  border: 1px solid #53af57;
+  color: #d1a163;
+  border: 1px solid #af9253;
 }
