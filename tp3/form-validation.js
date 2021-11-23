@@ -1,34 +1,35 @@
 window.onload = function () {
     console.log("DOM ready!");
     var myModal = new bootstrap.Modal(document.getElementById('myModal'));
-    
+
     document.querySelector("form").addEventListener("submit", function (event) {
         event.preventDefault();
         console.log("form submitted!");
         const date = document.querySelector("#date").value;
-        
 
+        
+      
         if (document.getElementById("Nom").value.length < 5) {
             document.querySelector(".modal-title").textContent = "Erreur"
-            document.querySelector(".modal-body").innerHTML = "Votre Nom doit contenir plus de 5 caractères ";
+            document.querySelector(".modal-body").innerHTML = "Votre nom doit contenir plus de 5 caractères ! ";
             myModal.show();
         }
 
         else if (document.getElementById("Prenom").value.length < 5) {
             document.querySelector(".modal-title").textContent = "Erreur"
-            document.querySelector(".modal-body").innerHTML = "Votre Prénom doit contenir plus de 5 caractères";
+            document.querySelector(".modal-body").innerHTML = "Votre prénom doit contenir plus de 5 caractères !";
             myModal.show();
         }
 
         else if (document.getElementById("Adresse").value.length < 5) {
             document.querySelector(".modal-title").textContent = "Erreur"
-            document.querySelector(".modal-body").innerHTML = "Votre Adresse doit contenir plus de 5 caractères";
+            document.querySelector(".modal-body").innerHTML = "Votre adresse doit contenir plus de 5 caractères !";
             myModal.show();
         }
 
         else if (document.getElementById("email").value.length < 5) {
             document.querySelector(".modal-title").textContent = "Erreur"
-            document.querySelector(".modal-body").innerHTML = "Votre Email doit contenir plus de 5 caractères ";
+            document.querySelector(".modal-body").innerHTML = "Votre Email doit contenir plus de 5 caractères !";
             myModal.show();
         }
 
@@ -40,10 +41,15 @@ window.onload = function () {
 
         else {
             console.log('OK');
-            document.querySelector(".modal-title").textContent = " Bienvenue " + document.getElementById("Nom").value;
+            document.querySelector(".modal-title").textContent = " Bienvenue " + document.getElementById("Prenom").value;
             document.querySelector(".modal-body").innerHTML = " Vous êtes né(e) le " + document.getElementById("date").value + " et vous habitez à ";
             document.querySelector(".modal-body2").innerHTML = '<a href="http://maps.google.com/maps?q=Paris"><img src="https://maps.googleapis.com/maps/api/staticmap?markers=Paris&zoom=9&size=200x100&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg"/> </a>';
             myModal.show();
+
+
+
+
+
         }
     }
     )
