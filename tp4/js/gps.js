@@ -37,4 +37,3 @@ function getLocation() {
         break;
     }
   }
-
