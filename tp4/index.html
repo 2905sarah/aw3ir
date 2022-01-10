@@ -55,7 +55,7 @@
         button[type=submit] {
             background-color: #eea4a4;
             color: white;
-            padding: 14px 20px;
+            padding: 14px 20px;           
             margin: 8px 0;
             border: none;
             cursor: pointer;
@@ -83,83 +83,89 @@
                 <font face="Times " color="#333131" size="7"> Formulaire </font>
             </h1>
 
-            
+        
 
             <div class="form-group row">
-                <label for="Nom" class="col-sm-2 col-form-label">Nom</label>
-                <div class="col-sm-10">
-                    <input type="text" name="Nom" class="form-control" id="Nom" placeholder="Ex : Henry" size="30"
-                        minlength="5" maxlength="20" />
+                <label for="Nom" class="col-sm-2 col-form-label" >Nom</label>
+                <div class="col-sm-9">
+                    <input type="text" name="Nom" class="form-control" id="Nom" placeholder="Ex: Henry"/>
                 </div>
-                <div class="form-group col-1">
-                    0 car.
-                </div>
+                <div class="col-sm-1" id="nameCounter">0 car.</div>
             </div>
 
+
             <p>
+
 
             <div class="form-group row">
                 <label for="Prenom" class="col-sm-2 col-form-label">Prénom</label>
-                <div class="col-sm-10">
-                    <input type="text" name="Prenom" class="form-control" id="Prenom" placeholder="Ex : Thierry"
-                        size="30" minlength="5" maxlength="20" />
+                <div class="col-sm-9">
+                    <input type="text" name = "Prenom" class="form-control" id="Prenom" placeholder="Ex: Thierry">
                 </div>
-                <div class="form-group col-1">
-                    0 car.
-                </div>
+                <div class="col-sm-1" id="surnameCounter">0 car.</div>
             </div>
 
             <p>
 
-            <div class="form-group row">
-                <label for="date" class="col-sm-2 col-form-label"> Date de naissance </label>
-                <div class="col-sm-10">
-                    <input type="date" class="form-control" id="date" placeholder="JJ/MM/AAAA" size="30" minlength="5"
-                        maxlength="20" />
+
+            <div class="form-group row"> 
+                <label for="date" class="col-sm-2 col-form-label">Date de naissance</label>
+                <div class="col-sm-9">                
+                    <input type="date" class="form-control" id="date" placeholder="JJ/MM/AAAA"  />
                 </div>
-            </div>
+                <div class="col-sm-1" id="dateCounter">0 car.</div>
+           </div>
+
+
 
             <p>
 
-            <div class="form-group row">
-                <label for="Adresse" class="col-sm-2 col-form-label"> Adresse </label>
-                <div class="col-sm-10">
-                    <input type="Adresse" class="form-control" id="Adresse" placeholder="Adresse" size="30"
-                        minlength="5" maxlength="20" />
+            
 
-                        <div id="map">
-                            <!--  image Google Map à mettre à jour -->                            
-                            <img alt="map" width="300" src="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg">
-                        </div>
+                <div class="form-group row">
+                    <label for="mail" class="col-sm-2 col-form-label"> Mail </label>
+                    <div class="col-sm-9" >
+                        <input type="mail" class="form-control" id="mail" placeholder="Ex : thierry@henry.fr"  />
                     </div>
-                    <div class="form-group col-1">
+                    
+                    <div class="col-sm-1" id="mailCounter">0 car. </div>
+                
+                </div>
+
+
+
+            <p>
+                
+                <div class="form-group row">
+                    <label for="Adresse" class="col-sm-2 col-form-label" >Adresse</label>
+                    <div class="col-sm-7"> 
+                        <input type="Adresse" class="form-control" id="Adresse" placeholder="Adresse">
+                        <div></br></div>
+                        <div id="map">
+                            <!--  image Google Map à mettre à jour -->
+                            <img
+                            alt="map"
+                            width="300"
+                            src="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg"
+                            />
+                        </div>
+                        <p>
+                    </div>
+                    <div class="col-sm-1">
                         <button class="btn btn-warning" type="button" id="gps">📍 GPS</button>
                     </div>
-                    <div class="col-1">
-                    </div>
-                </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-1" id="addCounter">0 car.</div>
+               </div>
 
 
+              
 
-                </div>
-            </div>
-
-            <p>
-
-            <div class="form-group row">
-                <label for="email" class="col-sm-2 col-form-label"> Email </label>
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="email" placeholder="Ex : thierry@henry.fr" size="30"
-                        minlength="5" maxlength="20" />
-                </div>
-            </div>
-
-            <br><br>
+            <button type="submit" class="btn btn-primary" id="subbutton"> Valider </button>   
+            
     </div>
 
-
-    <br><br>
-    <button type="submit" class="btn btn-primary" id="subbutton"> Valider </button>
+    
 
     </form>
     
@@ -186,7 +192,7 @@
                     <a href="https://maps.google.com/?q=Paris">Paris</a>
                 </td>
                 <td>
-                    <a href="emailto:sarah.oconnor@blabla.com">sarah.oconnor@blabla.com</a>
+                    <a href="mailto:sarah.oconnor@blabla.com">sarah.oconnor@blabla.com</a>
                 </td>
             </tr>
             <tr>
@@ -197,7 +203,7 @@
                     <a href="https://maps.google.com/?q=Bali">Bali</a>
                 </td>
                 <td>
-                    <a href="emailto:jlv@blabla.com">jlv@blabla.com</a>
+                    <a href="mailto:jlv@blabla.com">jlv@blabla.com</a>
                 </td>
             </tr>
         </tbody>

@@ -16,8 +16,8 @@ window.onload = function () {
         document.getElementById("addCounter").textContent = `${event.target.value.length} char.`; 
     });
 
-    document.querySelector("#email").addEventListener("keyup", function (event) {
-        document.getElementById("emailCounter").textContent = `${event.target.value.length} char.`; 
+    document.querySelector("#mail").addEventListener("keyup", function (event) {
+        document.getElementById("mailCounter").textContent = `${event.target.value.length} char.`; 
     });
 
     document.querySelector("#gps").addEventListener("click", function (event) {
@@ -32,7 +32,7 @@ window.onload = function () {
         document.querySelector("#Prenom").value,
         document.querySelector("#date").value,
         document.querySelector("#Adresse").value,
-        document.querySelector("#email").value,
+        document.querySelector("#mail").value,
         
       );
   
@@ -47,7 +47,7 @@ window.onload = function () {
               <td> ${contact.Prenom}</td>
               <td> ${contact.date}</td>
               <td> <a href="https://maps.google.com/?q=${contact.Adresse}">${contact.Adresse}</a></td>
-              <td> <a href="emailto:${contact.email}">${contact.email}</a></td>
+              <td> <a href="mailto:${contact.mail}">${contact.mail}</a></td>
           <tr>`;
       }
     });
