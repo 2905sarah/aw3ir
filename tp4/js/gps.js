@@ -38,7 +38,3 @@ function getLocation() {
     }
   }
 
-document.getElementById("gps").onclick = function () {
-    getLocation(); 
-}
-  
