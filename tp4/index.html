@@ -147,7 +147,7 @@
 
             <div class="form-group row">
                 <label for="Adresse" class="col-sm-2 col-form-label" >Adresse</label>
-                <div class="col-sm-7"> 
+                <div class="col-sm-9"> 
                     <input type="Adresse" class="form-control" id="Adresse" placeholder="Adresse"/>
                     <div></br></div>
                     
@@ -155,36 +155,33 @@
 
 
                 </div>
-                    <div class="col-sm-1">
-                        
-                        <div id="map" align="center">
-                            <!--  image Google Map à mettre à jour -->                            
-                            <img alt="map" width="300" src="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg">
-                        </div>
-
-                    <div class="form-group col-1">
-                        <button class="btn btn-warning" type="button" onclick="getLocation()" id="gps" >📍 GPS</button>
-                        
-                    </div>
-
-                    </div>
-
- 
-
-
-
-
-
-                    <div class="col-sm-1"></div>
+                    
                     <div class="col-sm-1" id="addCounter">0 car.</div>
             </div>
 
 
+            <div class="col-sm-1">
 
+                <div class="form-group col-1">
+                    <button class="btn btn-warning" type="button" onclick="getLocation()" id="gps" >📍 GPS</button>
+                    
+                </div>
 
-        <button type="submit" class="btn btn-primary" id="subbutton"> Valider </button>   
+                
+                <div id="map" >
+                    <!--  image Google Map à mettre à jour -->                            
+                              
+                    <img alt="map" width="250" src="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&amp;zoom=14&amp;size=400x300&amp;scale=2&amp;key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg">
+                
+                </div>
+
+           
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="subbutton"> Valider </button>  
             
     </div>
+
 
     </form>
 
