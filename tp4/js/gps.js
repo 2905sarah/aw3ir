@@ -1,4 +1,6 @@
 // demande de la localisation à l'utilisateur
+
+
 function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -37,3 +39,6 @@ function getLocation() {
         break;
     }
   }
+
+
+  
