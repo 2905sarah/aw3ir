@@ -1,23 +1,23 @@
 window.onload = function () {
     document.querySelector("#Nom").addEventListener("keyup", function (event) {
-      document.getElementById("nameCounter").textContent = `${event.target.value.length} char.`; 
+      document.getElementById("nameCounter").textContent = `${event.target.value.length} car.`; 
     });
 
 
     document.querySelector("#Prenom").addEventListener("keyup", function (event) {
-        document.getElementById("surnameCounter").textContent = `${event.target.value.length} char.`; 
+        document.getElementById("surnameCounter").textContent = `${event.target.value.length} car.`; 
     });
 
     document.querySelector("#date").addEventListener("keyup", function (event) {
-        document.getElementById("dateCounter").textContent = `${event.target.value.length} char.`; 
+        document.getElementById("dateCounter").textContent = `${event.target.value.length} car.`; 
     });
 
     document.querySelector("#Adresse").addEventListener("keyup", function (event) {
-        document.getElementById("addCounter").textContent = `${event.target.value.length} char.`; 
+        document.getElementById("addCounter").textContent = `${event.target.value.length} car.`; 
     });
 
     document.querySelector("#mail").addEventListener("keyup", function (event) {
-        document.getElementById("mailCounter").textContent = `${event.target.value.length} char.`; 
+        document.getElementById("mailCounter").textContent = `${event.target.value.length} car.`; 
     });
 
     document.querySelector("#gps").addEventListener("click", function (event) {
@@ -51,4 +51,8 @@ window.onload = function () {
           <tr>`;
       }
     });
-  };
+
+
+
+
+  }
