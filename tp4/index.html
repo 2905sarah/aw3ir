@@ -1,33 +1,231 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>TP4</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+<head>
+    <!-- CSS boostrap -->
+    <!-- librairie Javascript de boostrap pour pouvoir utiliser les composants interactifs (modal https://getbootstrap.com/docs/5.1/components/modal/ , collapse...) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 
-        <style>
-          body{
-              background-color: #e9ebee;              
-              font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-              font-size: 16px;
-              margin: 0 auto;
-              max-width: 800px;              
-          }
-        </style>
+    <script src="form-validation.js" type="text/javascript"></script>
+    <script src="gps.js" type="text/javascript"></script>
+    <script src="store.js" type="text/javascript"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>TP4 AW</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+
+    <style>
+        body {
+            font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+
+            background: rgb(248, 198, 182);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-size: 16px;
+            margin: 0 auto;
+            max-width: 800px;
+            color: rgb(31, 29, 29);
+
+        }
         
-        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
-        <!--<script src="main.js"></script>-->
-    </head>
-    <body>        
-        <h1>TP4</h1>
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
-    </body>
+        form {
+            width: 100%;
+            padding: 30px;
+            border: 1px solid #555151;
+
+            background-image: url("corailv1.jpg");
+            box-shadow: 0 0 20px 0 rgba(36, 34, 34, 0.2), 0 5px 5px 0 rgba(27, 26, 26, 0.24);
+        }
+
+        #container h1 {
+            width: 38%;
+            margin: 0 auto;
+            padding-bottom: 10px;
+        }
+
+
+        button[type=submit] {
+            background-color: #eea4a4;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button[type=submit]:hover {
+            background-color: white;
+            color: #f0aea2;
+            border: 1px solid #e99693;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <br><br>
+
+    <div class="container">
+        <form id="formulaire" method="post" onsubmit="return validateForm()">
+
+            <h1 align="center">
+                <font face="Times " color="#333131" size="7"> Formulaire </font>
+            </h1>
+
+            
+
+            <div class="form-group row">
+                <label for="Nom" class="col-sm-2 col-form-label">Nom</label>
+                <div class="col-sm-10">
+                    <input type="text" name="Nom" class="form-control" id="Nom" placeholder="Ex : Henry" size="30"
+                        minlength="5" maxlength="20" />
+                </div>
+                <div class="form-group col-1">
+                    0 car.
+                </div>
+            </div>
+
+            <p>
+
+            <div class="form-group row">
+                <label for="Prenom" class="col-sm-2 col-form-label">Prénom</label>
+                <div class="col-sm-10">
+                    <input type="text" name="Prenom" class="form-control" id="Prenom" placeholder="Ex : Thierry"
+                        size="30" minlength="5" maxlength="20" />
+                </div>
+                <div class="form-group col-1">
+                    0 car.
+                </div>
+            </div>
+
+            <p>
+
+            <div class="form-group row">
+                <label for="date" class="col-sm-2 col-form-label"> Date de naissance </label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="date" placeholder="JJ/MM/AAAA" size="30" minlength="5"
+                        maxlength="20" />
+                </div>
+            </div>
+
+            <p>
+
+            <div class="form-group row">
+                <label for="Adresse" class="col-sm-2 col-form-label"> Adresse </label>
+                <div class="col-sm-10">
+                    <input type="Adresse" class="form-control" id="Adresse" placeholder="Adresse" size="30"
+                        minlength="5" maxlength="20" />
+
+                        <div id="map">
+                            <!--  image Google Map à mettre à jour -->                            
+                            <img alt="map" width="300" src="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg">
+                        </div>
+                    </div>
+                    <div class="form-group col-1">
+                        <button class="btn btn-warning" type="button" id="gps">📍 GPS</button>
+                    </div>
+                    <div class="col-1">
+                    </div>
+                </div>
+
+
+
+                </div>
+            </div>
+
+            <p>
+
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label"> Email </label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" placeholder="Ex : thierry@henry.fr" size="30"
+                        minlength="5" maxlength="20" />
+                </div>
+            </div>
+
+            <br><br>
+    </div>
+
+
+    <br><br>
+    <button type="submit" class="btn btn-primary" id="subbutton"> Valider </button>
+
+    </form>
+    
+
+    <hr>
+    <h4>Liste des contacts</h4>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Adresse</th>
+                <th>Mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>oConnor</td>
+                <td>Sarah</td>
+                <td>21/01/2000</td>
+                <td>
+                    <a href="https://maps.google.com/?q=Paris">Paris</a>
+                </td>
+                <td>
+                    <a href="emailto:sarah.oconnor@blabla.com">sarah.oconnor@blabla.com</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Vandamme</td>
+                <td>JL</td>
+                <td>01/01/1950</td>
+                <td>
+                    <a href="https://maps.google.com/?q=Bali">Bali</a>
+                </td>
+                <td>
+                    <a href="emailto:jlv@blabla.com">jlv@blabla.com</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+
 </html>
