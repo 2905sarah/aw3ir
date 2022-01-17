@@ -1,71 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html>
 
-  <head>
+    <head>
 
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Application météo </title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8">
 
-    
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/weather-icons.min.css">
-    <link rel="stylesheet" href="css/weather-icons.css">
-    
-    <!-- Place favicon.ico in the root directory -->
+        <title>TP5</title>
 
-    <script src="js/main.js"></script>
-    <script src="js/libs/bootstrap.js"></script>
-    <script src="js/libs/bootstrap.min.js"></script>
-    <script src="js/libs/vue.js"></script>
+        <meta name="description" content="">
 
-
-<style>
-    body {
-      background-color: #eff2f7;
-      background-image: url("b-bell.jpg");
-      font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-      font-size: 16px;
-      margin: 0 auto;
-      max-width: 800px;
-    }
-
-    form {
-            width: 100%;
-            padding: 30px;
-            border: 1px solid #555151;
-            background-color: #99c2e4;
-            
-            box-shadow: 0 0 20px 0 rgba(36, 34, 34, 0.2), 0 5px 5px 0 rgba(27, 26, 26, 0.24);
-        }
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 
-  </style>
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-    <!--<link rel="stylesheet" href="style.css">-->
-    <!--<script src="main.js"></script>-->
-  </head>
+        <!-- Place favicon.ico in the root directory -->
 
 
-    <body>        
 
-        <p>
-        <center><h1> Application Météo 🌤 </h1></center>
+        <style>
 
-        <p>
+            body{
+
+                background-color: rgb(255, 255, 255);              
+
+                font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+
+                font-size: 16px;
+
+                margin: 0 auto;
+
+               padding-right: 300px;
+
+                padding-left: 300px;         
+
+            }
+
+          </style>
+
+          
+
+        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
+     
+
+         <script src="js/main.js"></script>
+         <script src="js/libs/vue.js"></script>
+
+       
+
+
+         <!-- CSS boostrap -->
+
+         
+
+         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+         <link rel="stylesheet" href="css/bootstrap.css">
+         <link rel="stylesheet" href="css/bootstrap.min.css">
+         <link rel="stylesheet" href="css/weather-icons.min.css">
+         <link rel="stylesheet" href="css/weather-icons.css">
+
+         
+
+ 
+
+         <!-- composants JS de boostrap (modal http://getbootstrap.com/docs/4.0/components/modal/ , collapse...) -->
+
+         <script src="js/libs/bootstrap.min.js"></script>
+
+         <script src="js/libs/bootstrap.js"></script>
+
+         
+
+         <link rel="stylesheet" href="css/style.css">
+
+
+
+
+
+    <body>  
+
+        
+
+        
+
+        <center><h1>Application Météo</h1></center>
+
+       
 
         <div id="weatherApp">
 
                 <!-- ici votre code HTML utilisé par VUE -->
 
-    
+        
+
 
 
         <!-- formulaire de saisie de ville -->
@@ -74,7 +105,7 @@
 
             <div class="input-group">
 
-                <input type="search" class="form-control" v-model="formCityName" placeholder="Saisir une ville" aria-label="Search for..." autofocus required>
+                <input type="search" class="form-control" v-model="formCityName" placeholder="Search for..." aria-label="Search for..." autofocus required>
 
                 <span class="input-group-btn">
 
@@ -89,22 +120,40 @@
         <!-- affichage de nombre de caractères saisie -->
 
             <small class="text-muted">
+
+             
+
                 {{ formCityName.length }} car.
+
             </small>
-  
+
+    
 
             <div class="alert alert-danger" role="alert" v-if='messageForm != ""'>
+
                 {{messageForm}}
+
             </div>                
 
         </form>
-        <br><br>
+
         <!-- fin: formulaire de saisie de ville -->
+
+
+
+        <!-- si messageForm n'est pas vide, on l'affiche -->
+
+        <div class="alert alert-danger" role="alert" v-if='messageForm != ""'>
+
+            {{messageForm}}
+
+        </div>   
+
+
 
         <!-- Listing des villes, boucle sur l'array : cityList -->
 
         <h4>Liste des villes ({{cityList.length}})</h4>
-        
 
         <ul class="list-group">
 
@@ -118,21 +167,28 @@
 
         </ul>
 
+
+
         <div class="alert alert-primary" role="alert" v-if="cityList.length==0">
 
             Aucune ville de saisie !
 
         </div>
 
+
+
         <!-- fin : Listing des villes -->
+
 
 
         <!-- meteo de la ville selectionnée -->
 
+
+
         <div v-if="cityWeatherLoading"> Chargement de la météo...</div>
 
 
-        <br><br>
+
         <div v-if="cityWeather">
 
 
@@ -206,35 +262,14 @@
                     </li>
 
                 </ul>        
-<!-- Add your site or application content here -->
-<p>Hello ☀️ AZERTY 1</p>
-<img src="galilee.png" alt="Logo Galilee" />
-
-<ul>
-  <li>
-    <a href="tp1/index.html">/TP1</a>
-  </li>
-  <li>
-    <a href="tp2/index.html">/TP2</a>
-  </li>
-  <li>
-    <a href="tp3/index.html">/TP3</a>
-  </li>
-  <li>
-    <a href="tp4/index.html">/TP4</a>
-  </li>
-  <li>
-    <a href="tp5/index.html">/TP5</a>
-  </li>
-  <li>
-    <a href="tp6/index.html">/TP6</a>
-  </li>
-</ul>
-
 
             </div></center>
-            <br><br>
+
         </div>
+
+
+
+
 
     </div>
 
