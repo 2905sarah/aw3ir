@@ -66,11 +66,9 @@ window.onload = function () {
             console.log('OK');
             document.querySelector(".modal-title").textContent = " Bienvenue  " + document.getElementById("Prenom").value;
             document.querySelector(".modal-body").innerHTML = "Vous êtes né(e) le " + document.getElementById("date").value + " et vous habitez à " + document.getElementById("Adresse").value;
-            document.querySelector(".modal-body2").innerHTML = '<br> <a href="http://maps.google.com/maps?"><img src="https://maps.googleapis.com/maps/api/staticmap?markers=Paris&zoom=9&size=200x100&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg"/> </a>';
-
+            document.querySelector(".modal-body2").innerHTML = '<a href="http://maps.google.com/maps?q=Paris"><img src="https://maps.googleapis.com/maps/api/staticmap?markers=Paris&zoom=9&size=200x100&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg"/> </a>';
 
            
-            
             contactStore.add(document.getElementById("Nom").value, document.getElementById("Prenom").value, document.getElementById("date").value, document.getElementById("Adresse").value, document.getElementById("mail").value);
 		    localStorage.setItem('contactList', JSON.stringify(contactStore.getList()));
             document.querySelector('#gps').addEventListener("click", function (event) {
