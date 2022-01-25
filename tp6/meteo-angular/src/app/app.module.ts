@@ -35,7 +35,8 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     ),
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
     // autres imports ici
   ],
   providers: [],

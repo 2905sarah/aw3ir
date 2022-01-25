@@ -38,4 +38,43 @@ export class MeteoService {
       });
 
   }
+
+  getForecast(name: string): Promise<any> {
+    console.log('from service', name);
+
+    let m = new MeteoItem();
+
+return fetch('https://api.openweathermap.org/data/2.5/forecast/?q='+ name + '&units=metric&lang=fr&appid=616911eca2f8fb462f126e46ce2bf268')
+  .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        if (json.cod == 200) {
+          let today = json.list[0].dt_txt.split(' ')[0];
+
+          // filtrer 
+          json.list = json.list.reduce((a: any[], d: { dt_txt: string; }) => {
+            if (!(a.find((i: { dt_txt: string; }) => i.dt_txt.split(' ')[0] == d.dt_txt.split(' ')[0])) && (d.dt_txt.split(' ')[0] !== today)) {
+              a.push(d);
+            }
+            return a;
+          }, []);
+
+          return Promise.resolve(json);
+        } else {
+          m.weather = json;
+
+          console.error('Forecast introuvable pour ' + name
+            + ' (' + json.message + ')');
+
+          return Promise.reject('Forecast introuvable pour ' + name
+          + ' (' + json.message + ')');
+        }
+
+      });
+
+  }
+
+
+
 }

@@ -35,7 +35,7 @@ export class MeteoComponent implements OnInit {
 
       this.saveCityList();
 
-      console.log(this.city.name, 'ajouté à la dans la liste');
+      console.log(this.city.name, 'ajouté à la liste');
     }else{
       console.log(this.city.name, 'existe déjà dans la liste');
     }
