@@ -10,6 +10,5 @@
 
   Documentation pour configurer votre compte Github : [/configurer_github/readme.md](/configurer_github/readme.md)
   
-  Page d'index des pages web https://[VOTRE_PSEUDO_GITHUB].github.io/aw3ir/
+  Page d'index des pages web https://2905sarah.github.io/aw3ir/
   
-  Exemple : https://bilelz.github.io/aw3ir/
